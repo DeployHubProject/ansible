@@ -1,0 +1,9 @@
+- name: Make Directory
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: Create directory structure
+    file:
+      path: /tmp/{{ newdir }}
+      state: directory

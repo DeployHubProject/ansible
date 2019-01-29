@@ -1,0 +1,7 @@
+- name: NS Update
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - shell:
+        id
