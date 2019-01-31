@@ -6,11 +6,11 @@
     - pip: 
         name: dnspython
 
-    - name: Add or modify www.linuxconfig.org A to 192.168.1.1"
+    - name: Add or modify {{ record }}.{{ zone }} A to {{ new_ip }}"
       nsupdate:
-       key_name: "my-key-name"
-       key_secret: "I1D5ZJq+2EkGP0p/69PDaVZJ8BrGNDA40Y6Dc2dBD9zBY674JFdeTXI+AaEgxhH/QbpiGi3rYF1B3FV4dEZFNQ=="
-       server: "192.168.3.96"
-       zone: "linuxconfig.org"
-       record: "www"
-       value: "192.168.1.1"
+       key_name: "{{ tsiguser }}"
+       key_secret: "{{ tsigpass }}"
+       server: "{{ dns_server }}"
+       zone: "{{ zone }}"
+       record: "{{ record }}"
+       value: "{{ new_ip }}"
