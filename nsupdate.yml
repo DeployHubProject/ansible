@@ -10,7 +10,7 @@
       nsupdate:
        key_name: "{{ tsiguser }}"
        key_secret: "{{ tsigpass }}"
-       server: "{{ server_hostname }}"
+       server: "{{ server_ip }}"
        zone: "{{ zone }}"
        record: "{{ record }}"
        value: "{{ new_ip }}"
