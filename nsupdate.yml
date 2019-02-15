@@ -1,6 +1,7 @@
 - name: NS Update
   hosts: all
   gather_facts: no
+  host_key_checking = false
 
   tasks:
     - pip: 
