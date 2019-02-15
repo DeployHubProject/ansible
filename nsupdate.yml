@@ -1,7 +1,8 @@
 - name: NS Update
   hosts: all
   gather_facts: no
-
+  key_file: /keys/id_rsa
+  
   tasks:
     - pip: 
         name: dnspython
