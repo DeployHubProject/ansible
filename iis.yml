@@ -21,14 +21,14 @@
     win_iis_website:
       name: "{{ website_name }}"
       state: started
-      port: 8080
+      port: {{ website_port }}
       physical_path: "{{ site_path }}"
   - name: Open site's port on firewall
     win_firewall_rule:
       name: {{ firewall_rule_name }}
       enable: yes
       state: present
-      localport: 8080
+      localport: {{ website_port }}
       action: Allow
       direction: In
       protocol: Tcp
