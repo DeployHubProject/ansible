@@ -35,12 +35,6 @@
       force: true
     tags: firewall
 
-  - name: create deploy staging path
-    win_file: path={{ ansible_test_staging_path }} state=directory
-  - name: get code to deploy staging path
-    win_copy:
-      src: {{ src_zip_file }}
-      dest: "{{ ansible_test_staging_path }}"
   - name: unzip code to site path
     win_unzip:
       src: "{{ ansible_test_staging_path }}\\{{ src_zip_file }}"
