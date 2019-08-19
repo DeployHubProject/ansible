@@ -20,7 +20,6 @@
     win_iis_website:
       name: "{{ website_name }}"
       state: stopped
-      port: {{ website_port }}
       physical_path: "{{ site_path }}"
 
   - name: unzip code to site path
