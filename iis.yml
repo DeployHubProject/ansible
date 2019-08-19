@@ -1,18 +1,8 @@
 - name: IIS Update
   hosts: all
   gather_facts: no
-  vars:
-    ansible_test_staging_path: "{{ staging_path }}\\site-{{ ansible_date_time.year }}{{ ansible_date_time.month }}{{ ansible_date_time.day }}"
-
+  
   tasks:
-  - name: install-iis
-    win_feature:
-      name: "Web-Server"
-      state: present
-      restart: no
-      include_sub_features: yes
-      include_management_tools: no
-
   - name: create new website's directory
     win_file: path={{ site_path }} state=directory
 
@@ -24,9 +14,8 @@
 
   - name: unzip code to site path
     win_unzip:
-      src: "{{ ansible_test_staging_path }}\\{{ src_zip_file }}"
+      src: "{{ src_zip_file }}"
       dest: "{{ site_path }}"
-      creates: "{{ site_path }}\\index.html"
     tags: unzip
 
   - name: start website
