@@ -9,8 +9,12 @@
   - name: stop website
     win_iis_website:
       name: "{{ website_name }}"
-      state: stopped
+						port: "{{ website_port }}"
+						hostname: "{{ website_hostname }}"
+						ip: "{{ website_ip }}"
+						application_pool: "{{ application_pool }}"
       physical_path: "{{ site_path }}"
+						state: stopped
 
   - name: unzip code to site path
     win_unzip:
@@ -21,4 +25,9 @@
   - name: start website
     win_iis_website:
       name: "{{ website_name }}"
-      state: started
+						port: "{{ website_port }}"
+						hostname: "{{ website_hostname }}"
+						ip: "{{ website_ip }}"
+						application_pool: "{{ application_pool }}"
+      physical_path: "{{ site_path }}"
+						state: started
