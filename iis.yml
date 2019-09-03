@@ -10,7 +10,7 @@
     win_iis_website:
       name: "{{ website_name }}"
 						port: "{{ website_port }}"
-						hostname: "{{ website_hostname }}"
+						ssl: "{{ website_ssl }}"
 						ip: "{{ website_ip }}"
 						application_pool: "{{ application_pool }}"
       physical_path: "{{ site_path }}"
@@ -26,8 +26,7 @@
     win_iis_website:
       name: "{{ website_name }}"
 						port: "{{ website_port }}"
-						hostname: "{{ website_hostname }}"
+						ssl: "{{ website_ssl }}"
 						ip: "{{ website_ip }}"
-						application_pool: "{{ application_pool }}"
       physical_path: "{{ site_path }}"
 						state: started
