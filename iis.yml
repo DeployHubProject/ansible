@@ -9,12 +9,11 @@
   - name: stop website
     win_iis_website:
       name: "{{ website_name }}"
-						port: "{{ website_port }}"
-						ssl: "{{ website_ssl }}"
-						ip: "{{ website_ip }}"
-						application_pool: "{{ application_pool }}"
+      port: "{{ website_port }}"
+      ssl: "{{ website_ssl }}"
+      ip: "{{ website_ip }}"
       physical_path: "{{ site_path }}"
-						state: stopped
+      state: stopped
 
   - name: unzip code to site path
     win_unzip:
@@ -25,8 +24,7 @@
   - name: start website
     win_iis_website:
       name: "{{ website_name }}"
-						port: "{{ website_port }}"
-						ssl: "{{ website_ssl }}"
-						ip: "{{ website_ip }}"
-      physical_path: "{{ site_path }}"
-						state: started
+      port: "{{ website_port }}"
+      ssl: "{{ website_ssl }}"
+      ip: "{{ website_ip }}"
+      state: started
