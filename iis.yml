@@ -8,6 +8,7 @@
 
   - name: stop website
     win_iis_website:
+      application_pool: "{{ application_pool }}"
       name: "{{ website_name }}"
       port: "{{ website_port }}"
       ssl: "{{ website_ssl }}"
@@ -23,6 +24,7 @@
 
   - name: start website
     win_iis_website:
+      application_pool: "{{ application_pool }}"
       name: "{{ website_name }}"
       port: "{{ website_port }}"
       ssl: "{{ website_ssl }}"
